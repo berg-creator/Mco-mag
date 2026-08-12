@@ -1,0 +1,165 @@
+{
+  "brands": [
+    {
+      "slug": "cp-company",
+      "name": "C.P. Company",
+      "circle": "techno",
+      "country": "Италия",
+      "city": "Болонья",
+      "founded": 1971,
+      "founder": "Массимо Ости",
+      "roots": [],
+      "in_store": false,
+      "notes": "Год начала garment dyeing в источниках расходится: статья о C.P. Company называет 1974-й (метод «Tinto in capo»), статья о самом Ости — 1979-й. Точную дату в посте не называть либо сказать, что источники расходятся.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/C.P._Company",
+        "https://en.wikipedia.org/wiki/Massimo_Osti"
+      ],
+      "stories": [
+        {
+          "id": "cp-goggle-1988",
+          "angle": "Зачем в капюшон куртки вшили линзы",
+          "used": false,
+          "facts": [
+            "В 1988 году вышла куртка Mille Miglia — её назвали в честь гонки классических автомобилей по открытым дорогам Италии.",
+            "В капюшон вшиты две прозрачные линзы, ещё одна — на рукаве, чтобы смотреть на часы не задирая манжет.",
+            "Позже за этой моделью закрепилось второе имя — goggle jacket."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+        },
+        {
+          "id": "cp-chester-perry",
+          "angle": "Почему бренд поменял имя через семь лет после запуска",
+          "used": false,
+          "facts": [
+            "Компания начиналась под названием Chester Perry.",
+            "В 1978 году её переименовали в C.P. Company после исков от Chester Barrie и Fred Perry."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+        },
+        {
+          "id": "cp-garment-dyeing",
+          "angle": "Красить не ткань, а готовую вещь",
+          "used": false,
+          "facts": [
+            "Метод назывался «Tinto in capo» — окрашивание уже сшитого изделия.",
+            "Задача была снять с ткани жёсткость и дать вещи вид ношеной."
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/C.P._Company",
+            "https://en.wikipedia.org/wiki/Massimo_Osti"
+          ]
+        },
+        {
+          "id": "cp-owners",
+          "angle": "Кому принадлежал бренд после ухода основателя",
+          "used": false,
+          "facts": [
+            "В 1984 году Массимо Ости продал долю группе GFT (Gruppo Finanziario Tessile).",
+            "В 1993 году компания перешла к Карло Риветти.",
+            "В 2010 году её купила FGF Industry Энцо Фуско, в 2015-м — гонконгская Tristate Holdings.",
+            "В 2019 году президентом компании стал Лоренцо Ости, сын основателя."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+        }
+      ]
+    },
+    {
+      "slug": "stone-island",
+      "name": "Stone Island",
+      "circle": "techno",
+      "country": "Италия",
+      "city": "Раварино",
+      "founded": 1982,
+      "founder": "Массимо Ости",
+      "roots": ["cp-company"],
+      "in_store": false,
+      "notes": "",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stone_Island",
+        "https://en.wikipedia.org/wiki/Massimo_Osti"
+      ],
+      "stories": [
+        {
+          "id": "si-tela-stella",
+          "angle": "Бренд, который начался с грузового брезента",
+          "used": false,
+          "facts": [
+            "Ости взял ткань, которой накрывают грузовики, и обработал её стиркой с камнем (stone wash).",
+            "Из неё вышла первая коллекция 1982 года: семь вещей верхней одежды в шести двухцветных вариантах.",
+            "Ткань получила имя Tela Stella."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+        },
+        {
+          "id": "si-name-conrad",
+          "angle": "Откуда взялось название и почему на рукаве компас",
+          "used": false,
+          "facts": [
+            "Название пришло из романов Джозефа Конрада, где часто встречаются слова «камень» и «остров».",
+            "Логотип отсылает к компасу и дополнен морской звездой."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+        },
+        {
+          "id": "si-fabrics",
+          "angle": "Ткани, которых до этого не существовало",
+          "used": false,
+          "facts": [
+            "1983 год — Raso Gommato.",
+            "1987 год — ткань, меняющая цвет от температуры, и резиновая шерсть.",
+            "1991 год — отражающая ткань."
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stone_Island",
+            "https://en.wikipedia.org/wiki/Massimo_Osti"
+          ]
+        },
+        {
+          "id": "si-owners-moncler",
+          "angle": "Сколько стоит бренд, начавшийся с брезента",
+          "used": false,
+          "facts": [
+            "В 1983 году половину компании купила GFT, в 1991-м — оставшуюся половину.",
+            "В 1993 году бренд перешёл к Карло Риветти.",
+            "В 2017 году 30% приобрёл сингапурский фонд Temasek.",
+            "В 2020–2021 годах Stone Island купил Moncler за 1,15 млрд евро."
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+        }
+      ]
+    },
+    {
+      "slug": "ten-c",
+      "name": "Ten C",
+      "circle": "techno",
+      "country": "Италия",
+      "city": "",
+      "founded": 2010,
+      "founder": "Алессандро Пунджетти и Пол Харви",
+      "roots": [],
+      "in_store": false,
+      "notes": "Оба основателя связаны со Stone Island, но год и должности в этом сеансе не подтверждены — родословную к Stone Island в постах не проводить, пока факт не проверен и не записан сюда.",
+      "sources": [
+        "https://hypebeast.com/2021/8/ten-c-ojj-fabric-interview-what-the-tech",
+        "https://www.highsnobiety.com/p/ten-c-fw22-interview/"
+      ],
+      "stories": [
+        {
+          "id": "ten-c-ojj",
+          "angle": "Бренд, который начался не с вещи, а с ткани",
+          "used": false,
+          "facts": [
+            "Ten C основали в 2010 году Алессандро Пунджетти и Пол Харви.",
+            "Отправной точкой была ткань OJJ — Original Japanese Jersey, смесь нейлона и полиэстера японского производства.",
+            "Название бренда — сокращение от The Emperor's New Clothes."
+          ],
+          "sources": [
+            "https://hypebeast.com/2021/8/ten-c-ojj-fabric-interview-what-the-tech",
+            "https://www.highsnobiety.com/p/ten-c-fw22-interview/"
+          ]
+        }
+      ]
+    }
+  ]
+}

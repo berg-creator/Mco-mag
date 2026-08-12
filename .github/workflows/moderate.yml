@@ -1,0 +1,44 @@
+name: Дежурство бота
+
+# Дежурство длиной почти в час запускается раз в час: пока смена идёт, бот
+# отвечает на нажатия за секунды. Разрыв между сменами — минуты, и он не страшен:
+# события Telegram хранит и отдаст следующей смене.
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Сколько минут дежурить"
+        type: string
+        default: "55"
+
+concurrency:
+  group: moderate
+  cancel-in-progress: false
+
+jobs:
+  moderate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Дежурить и разбирать нажатия
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
+          MINUTES: ${{ inputs.minutes || '55' }}
+        # Состояние отправляется в репозиторий изнутри дежурства (см. push_state):
+        # запуск обрывают по лимиту времени, и отдельного шага «сохранить»
+        # здесь может не случиться вовсе.
+        run: python -m src.moderate --serve "$MINUTES"

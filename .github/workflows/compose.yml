@@ -1,0 +1,50 @@
+name: Генерация постов
+
+# Один запуск делает два дела подряд: сначала забирает готовый батч, потом,
+# если очередь просела, отправляет новый. Батч считается до суток, поэтому
+# «отправить и подождать в том же запуске» не работает — Actions столько
+# держать нельзя, да и незачем.
+on:
+  schedule:
+    # 03:20 и 15:20 UTC = 06:20 и 18:20 МСК. Дважды в сутки: утренний запуск
+    # забирает то, что отправил вечерний, и наоборот.
+    - cron: "20 3,15 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: state-write
+  cancel-in-progress: false
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Забрать готовый батч
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m src.compose --fetch
+
+      - name: Отправить новый батч
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m src.compose --submit
+
+      - name: Сохранить состояние
+        run: |
+          git config user.name "mcomag-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/ content/
+          git diff --cached --quiet || git commit -m "генерация: очередь пополнена"
+          git pull --rebase --autostash origin ${{ github.ref_name }}
+          git push
