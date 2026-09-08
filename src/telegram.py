@@ -92,6 +92,7 @@ def send_message(
     *,
     preview: bool = False,
     buttons: list[list[dict]] | None = None,
+    force_reply: bool = False,
 ) -> dict:
     payload: dict[str, Any] = {
         "chat_id": chat_id,
@@ -101,6 +102,11 @@ def send_message(
     }
     if buttons:
         payload["reply_markup"] = json.dumps({"inline_keyboard": buttons})
+    elif force_reply:
+        # Ответ на это сообщение вернётся с reply_to_message — по нему поллер
+        # и узнаёт, к какому посту правка. Хранить «кто что сейчас правит»
+        # в файле состояния не нужно: Telegram хранит связь сам.
+        payload["reply_markup"] = json.dumps({"force_reply": True})
     return _call("sendMessage", payload)
 
 
@@ -139,7 +145,10 @@ def approval_buttons(post_id: str) -> list[list[dict]]:
             {"text": "✅ В канал", "callback_data": f"pub:{post_id}"},
             {"text": "🗑 Удалить", "callback_data": f"del:{post_id}"},
         ],
-        [{"text": "⏭ Позже", "callback_data": f"skip:{post_id}"}],
+        [
+            {"text": "✏️ Поправить", "callback_data": f"fix:{post_id}"},
+            {"text": "⏭ Позже", "callback_data": f"skip:{post_id}"},
+        ],
     ]
 
 

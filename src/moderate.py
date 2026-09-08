@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import logging
 import os
+import re
 import subprocess
 import time
 
@@ -32,6 +33,12 @@ log = logging.getLogger("moderate")
 
 OFFSET_FILE = config.DATA / "tg_offset.json"
 
+# Имя файла поста в тексте сообщения-приглашения. По нему правка находит
+# свой пост: связь «кто что сейчас правит» держит сам Telegram через
+# reply_to_message, и своего состояния для этого заводить не нужно —
+# при двух ведущих оно бы ещё и путалось.
+_POST_ID = re.compile(r"[\w.\-]+\.json")
+
 # Сколько секунд Telegram придерживает запрос, если событий нет. Больше —
 # меньше пустых обращений; больше 50 сервер обрывает сам.
 POLL_TIMEOUT = 25
@@ -40,12 +47,24 @@ POLL_TIMEOUT = 25
 PUSH_EVERY = 600
 
 
-def handle(action: str, post_id: str) -> str:
+def handle(action: str, post_id: str, chat_id: str) -> str:
     """Выполняет решение владельца. Возвращает текст для всплывашки."""
     path = config.QUEUE / post_id
 
     if action == "skip":
         return "Оставил в очереди"
+
+    if action == "fix":
+        # Пост остаётся в очереди: правка — это не решение о публикации,
+        # а материал для правки формата. Ответ на это сообщение поймает note_fix.
+        telegram.send_message(
+            chat_id,
+            f"✏️ Правка к посту <code>{post_id}</code>\n\n"
+            f"Ответь на это сообщение: что не так — или пришли свой вариант "
+            f"текста целиком. Запишу в рефы, дальше буду писать по ним.",
+            force_reply=True,
+        )
+        return "Жду правку ответом"
 
     if not path.exists():
         return "Поста уже нет в очереди"
@@ -70,6 +89,55 @@ def handle(action: str, post_id: str) -> str:
     return "Непонятная команда"
 
 
+def note_fix(message: dict, admins: list[str], dry_run: bool) -> bool:
+    """Записывает правку ведущего в журнал рефов. False — это не правка.
+
+    Правки копятся в data/feedback.jsonl вместе с текстом поста, к которому
+    относятся: без оригинала «сделай короче» через месяц ничего не значит.
+    Текст поста в очереди при этом не подменяется — «сделай короче» стало бы
+    самим постом, а отличить замечание от переписанного текста надёжно нельзя.
+    """
+    reply = message.get("reply_to_message") or {}
+    found = _POST_ID.search(reply.get("text", ""))
+    if not found:
+        return False
+
+    sender = str(message.get("from", {}).get("id", ""))
+    text = (message.get("text") or "").strip()
+    if sender not in admins or not text:
+        return False
+
+    post_id = found.group(0)
+    chat_id = str(message.get("chat", {}).get("id", "")) or sender
+
+    if dry_run:
+        print(f"  правка к {post_id} (от {sender}): {text[:60]}")
+        return True
+
+    # Пост мог уже уйти в канал — тогда он лежит в архиве, а не в очереди.
+    post = state.read_json(config.QUEUE / post_id, None)
+    if post is None:
+        post = state.read_json(config.ARCHIVE / post_id, {})
+
+    state.append_jsonl(
+        config.FEEDBACK_FILE,
+        [
+            {
+                "post_id": post_id,
+                "rubric": post.get("rubric", ""),
+                "brand": post.get("brand", ""),
+                "author": message.get("from", {}).get("username", "") or sender,
+                "fix": text,
+                "original": post.get("text", ""),
+                "at": state.iso(),
+            }
+        ],
+    )
+    telegram.send_message(chat_id, "Записал. Следующие посты пишу с учётом этого.")
+    print(f"  правка к {post_id} записана (от {sender})")
+    return True
+
+
 def process(updates: list[dict], admins: list[str], dry_run: bool, offset: int) -> tuple[int, int]:
     """Разбирает пачку событий. Возвращает (обработано нажатий, новый offset)."""
     handled = 0
@@ -80,6 +148,11 @@ def process(updates: list[dict], admins: list[str], dry_run: bool, offset: int) 
 
         query = update.get("callback_query")
         if not query:
+            # Обычное сообщение боту разбирается здесь же: второй поллер завёл бы
+            # войну за offset getUpdates — кто первый забрал, для того событие
+            # и исчезло.
+            if update.get("message") and note_fix(update["message"], admins, dry_run):
+                handled += 1
             continue
 
         data = query.get("data", "")
@@ -101,15 +174,17 @@ def process(updates: list[dict], admins: list[str], dry_run: bool, offset: int) 
             handled += 1
             continue
 
-        result = handle(action, post_id)
+        message = query.get("message", {})
+        chat_id = str(message.get("chat", {}).get("id", "")) or sender
+
+        result = handle(action, post_id, chat_id)
         telegram.answer_callback(query["id"], result)
 
         # Кнопки убираем в том чате, где нажали: ведущих несколько, и превью
         # у каждого своё. У остальных клавиатура останется — повторное нажатие
-        # получит честное «поста уже нет в очереди».
-        message = query.get("message", {})
-        chat_id = str(message.get("chat", {}).get("id", "")) or sender
-        if message.get("message_id"):
+        # получит честное «поста уже нет в очереди». После «Поправить»
+        # и «Позже» пост живёт дальше, поэтому кнопки остаются на месте.
+        if action in ("pub", "del") and message.get("message_id"):
             telegram.edit_markup(chat_id, message["message_id"], None)
 
         print(f"  {post_id}: {result} (решил {sender})")
@@ -151,7 +226,7 @@ def serve(minutes: int) -> int:
             next_push = time.monotonic() + PUSH_EVERY
 
     push_state()
-    print(f"Дежурство окончено. Обработано нажатий: {total}.")
+    print(f"Дежурство окончено. Обработано событий: {total}.")
     return 0
 
 
@@ -206,11 +281,11 @@ def once(dry_run: bool) -> int:
         # В очереди Telegram лежат и обычные сообщения боту — в разбор они
         # не идут, но молчать про них нельзя: иначе «сухой» прогон выглядит
         # так, будто событий не было вовсе.
-        print(f"Событий в очереди: {len(updates)}, из них нажатий кнопок: {handled}.")
+        print(f"Событий в очереди: {len(updates)}, из них разобрано: {handled}.")
         return 0
 
     state.write_json(OFFSET_FILE, {"offset": last_id})
-    print(f"Обработано нажатий: {handled}.")
+    print(f"Обработано событий: {handled}.")
     return 0
 
 

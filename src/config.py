@@ -26,6 +26,9 @@ COLLECTIONS_FILE = DATA / "collections.json"
 CELEBRITIES_FILE = DATA / "celebrities.json"
 UNRELEASED_FILE = DATA / "unreleased.json"
 FEEDS_FILE = DATA / "feeds.json"
+# Поводы рубрики НОВОЕ. Пока заполняется руками; когда появится сборщик RSS,
+# он будет складывать разобранные поводы сюда же — формат один.
+FRESH_FILE = DATA / "fresh.json"
 
 # Служебное состояние конвейера.
 INBOX_FILE = DATA / "inbox.jsonl"
@@ -33,6 +36,11 @@ SEEN_FILE = DATA / "seen.json"
 POSTED_FILE = DATA / "posted.json"
 USED_FILE = DATA / "used.json"
 BATCH_FILE = DATA / "pending_batch.json"
+
+# Правки ведущих, присланные боту кнопкой «Поправить». Это рефы формата:
+# что не так с постом и как надо. Читаются перед правкой промптов — там
+# живой вкус владельцев канала, которого нет ни в голосе, ни в задании.
+FEEDBACK_FILE = DATA / "feedback.jsonl"
 
 # Журнал «чем пополнить базу»: сюда падает всё, о чём хотели написать,
 # но фактов не хватило. Это список работы по реальному спросу, а не догадки.
