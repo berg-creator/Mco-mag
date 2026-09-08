@@ -1,0 +1,40 @@
+{
+  "feeds": [
+    {
+      "name": "Hypebeast",
+      "url": "https://hypebeast.com/feed.xml",
+      "lang": "en",
+      "note": "Главный источник по дропам и коллаборациям стритвира и люкса, самый быстрый по свежести"
+    },
+    {
+      "name": "Highsnobiety",
+      "url": "https://www.highsnobiety.com/feeds/rss",
+      "lang": "en",
+      "note": "Подробные разборы дропов техно-кэжуала (Stone Island, C.P. Company) и архивных домов"
+    },
+    {
+      "name": "WWD Footwear News",
+      "url": "https://wwd.com/footwear-news/feed/",
+      "lang": "en",
+      "note": "Индустриальные новости по сникерам: релизы, коллаборации, даты выхода"
+    },
+    {
+      "name": "Sneaker News",
+      "url": "https://sneakernews.com/feed/",
+      "lang": "en",
+      "note": "Даты и детали конкретных сникер-дропов и коллабораций"
+    },
+    {
+      "name": "Dazed",
+      "url": "https://www.dazeddigital.com/rss",
+      "lang": "en",
+      "note": "Культура и авангард — держит в поле зрения Margiela, Raf Simons, Comme des Garçons"
+    },
+    {
+      "name": "Highxtar",
+      "url": "https://highxtar.com/feed/",
+      "lang": "en",
+      "note": "Европейский стритвир и люкс, хорошо покрывает итальянский техно-кэжуал"
+    }
+  ]
+}

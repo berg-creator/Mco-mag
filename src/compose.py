@@ -68,6 +68,31 @@ def save_post(rubric_key: str, text: str, source: dict) -> Path:
 # ─────────────────────────── материал ───────────────────────────
 
 
+# Курируемые базы остальных рубрик. Формат записи у всех трёх одинаковый
+# (items с полями angle/facts/sources), поэтому кода на рубрику не нужно:
+# отличается только промпт и файл.
+ITEM_SOURCES = {
+    "fresh": config.FRESH_FILE,
+    "worn": config.CELEBRITIES_FILE,
+    "unreleased": config.UNRELEASED_FILE,
+}
+
+
+def curated_items(path: Path) -> list[dict]:
+    """Неиспользованные записи базы.
+
+    Запись без ссылок не берётся вовсе. Строже всего это в «НЕ ВЫШЛО» —
+    территории слухов, — но правило общее: проверить факт постфактум
+    по посту в канале уже нельзя.
+    """
+    data = state.read_json(path, {"items": []})
+    return [
+        item
+        for item in data.get("items", [])
+        if not item.get("used") and item.get("facts") and item.get("sources")
+    ]
+
+
 def brand_stories() -> list[tuple[dict, dict]]:
     """Неиспользованные сюжеты рубрики ИСТОРИЯ: пары (бренд, сюжет)."""
     data = state.read_json(config.BRANDS_FILE, {"brands": []})
@@ -98,12 +123,15 @@ def history_payload(brand: dict, story: dict) -> dict:
     }
 
 
-def plan(needed: int) -> list[tuple[str, str, dict, dict]]:
+def plan(needed: int, only: str | None = None) -> list[tuple[str, str, dict, dict]]:
     """Задания: (custom_id, ключ рубрики, данные для модели, служебный источник).
 
     Рубрики, до которых ещё не дошли руки, в план не попадают: список рабочих
     задан в config.ACTIVE_RUBRICS. Веса из config.RUBRICS применяются к ним же,
     поэтому в первой фазе вся квота уходит ИСТОРИИ.
+
+    `only` обходит этот список — так пишутся пробные посты рубрики, которую
+    ещё не включили в ленту.
     """
     jobs: list[tuple[str, str, dict, dict]] = []
     counter = 0
@@ -113,9 +141,8 @@ def plan(needed: int) -> list[tuple[str, str, dict, dict]]:
         counter += 1
         jobs.append((f"job-{counter:03d}-{rubric_key}", rubric_key, payload, source))
 
-    weights = {
-        r.key: r.weight for r in config.RUBRICS if r.key in config.ACTIVE_RUBRICS
-    }
+    keys = (only,) if only else config.ACTIVE_RUBRICS
+    weights = {r.key: r.weight for r in config.RUBRICS if r.key in keys}
     total = sum(weights.values()) or 1
     quota = {key: max(1, round(needed * w / total)) for key, w in weights.items()}
 
@@ -136,6 +163,24 @@ def plan(needed: int) -> list[tuple[str, str, dict, dict]]:
                 },
             )
 
+    for key, path in ITEM_SOURCES.items():
+        if key not in quota:
+            continue
+        items = curated_items(path)
+        random.shuffle(items)
+        for item in items[: quota[key]]:
+            add(
+                key,
+                # Модель получает запись целиком: всё, что в ней есть, —
+                # проверенный факт, а служебные поля ей ни к чему.
+                {k: v for k, v in item.items() if k not in ("id", "used")},
+                {
+                    "brand": item.get("brand", ""),
+                    "story_id": item.get("id", ""),
+                    "sources": item.get("sources", []),
+                },
+            )
+
     return jobs[:needed]
 
 
@@ -144,13 +189,26 @@ def mark_used(story_ids: list[str]) -> None:
     чтобы сорванный батч не съел материал впустую."""
     if not story_ids:
         return
-    data = state.read_json(config.BRANDS_FILE, {"brands": []})
     wanted = set(story_ids)
-    for brand in data.get("brands", []):
+
+    brands = state.read_json(config.BRANDS_FILE, {"brands": []})
+    for brand in brands.get("brands", []):
         for story in brand.get("stories", []):
             if story.get("id") in wanted:
                 story["used"] = True
-    state.write_json(config.BRANDS_FILE, data)
+    state.write_json(config.BRANDS_FILE, brands)
+
+    for path in ITEM_SOURCES.values():
+        data = state.read_json(path, None)
+        if not data:
+            continue
+        touched = False
+        for item in data.get("items", []):
+            if item.get("id") in wanted and not item.get("used"):
+                item["used"] = True
+                touched = True
+        if touched:
+            state.write_json(path, data)
 
 
 # ─────────────────────────── генерация ───────────────────────────
@@ -218,7 +276,7 @@ def do_submit(needed: int) -> int:
 
     jobs = plan(needed)
     if not jobs:
-        print("Нечего генерировать: свободных сюжетов в базе нет. Пополни data/brands.json.")
+        print("Нечего генерировать: свободных сюжетов в базах нет. Пополни data/.")
         return 0
 
     try:
@@ -278,10 +336,14 @@ def do_fetch() -> int:
     return 0
 
 
-def do_now(count: int, jobs: list[tuple[str, str, dict, dict]] | None = None) -> int:
+def do_now(
+    count: int,
+    jobs: list[tuple[str, str, dict, dict]] | None = None,
+    only: str | None = None,
+) -> int:
     # Готовые задания приходят из сорвавшегося батча: план уже составлен,
     # второй раз тасовать сюжеты незачем.
-    jobs = plan(count) if jobs is None else jobs
+    jobs = plan(count, only) if jobs is None else jobs
     if not jobs:
         print("Нечего генерировать: свободных сюжетов в базе нет.")
         return 0
@@ -305,12 +367,12 @@ def do_now(count: int, jobs: list[tuple[str, str, dict, dict]] | None = None) ->
     return 0
 
 
-def do_dry_run(needed: int) -> int:
-    jobs = plan(needed)
+def do_dry_run(needed: int, only: str | None = None) -> int:
+    jobs = plan(needed, only)
     print(f"\nГенератор: {llm.describe()}")
     print(f"В очереди сейчас: {queue_size()}. Нужно добрать: {needed}.\n")
     if not jobs:
-        print("Свободных сюжетов нет. Пополни data/brands.json — раздел stories.")
+        print("Свободных сюжетов нет. Пополни базу рубрики в data/.")
         return 0
     for _, rubric_key, payload, source in jobs:
         title = config.RUBRIC_BY_KEY[rubric_key].title
@@ -325,6 +387,11 @@ def main() -> int:
     parser.add_argument("--submit", action="store_true", help="отправить батч (вдвое дешевле)")
     parser.add_argument("--fetch", action="store_true", help="забрать готовый батч")
     parser.add_argument("--now", type=int, metavar="N", help="написать N постов сразу")
+    parser.add_argument(
+        "--rubric",
+        choices=[r.key for r in config.RUBRICS],
+        help="только эта рубрика, даже если она ещё не включена в ленту",
+    )
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -333,9 +400,9 @@ def main() -> int:
     needed = max(0, config.QUEUE_TARGET - queue_size())
 
     if args.dry_run:
-        return do_dry_run(needed or config.QUEUE_TARGET)
+        return do_dry_run(needed or config.QUEUE_TARGET, args.rubric)
     if args.now:
-        return do_now(args.now)
+        return do_now(args.now, only=args.rubric)
     if args.fetch:
         return do_fetch()
     if args.submit:

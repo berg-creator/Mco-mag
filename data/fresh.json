@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "stone-island-ghost-fw2026-campaign",
+      "used": false,
+      "brand": "Stone Island",
+      "what": "Кампания FW2026 «Community as a Form of Research»: актёр Стивен Грэм выбрал куртку из резинированной кожи линии Ghost, Skepta — плотный нейлон на подкладке PrimaLoft",
+      "when": "1 сентября 2026",
+      "angle": "Резинированная кожа в кадре — не спецэффект, а фирменная обработка ткани, которую основатель бренда запустил ещё в 1983 году",
+      "facts": [
+        "В кампании FW2026 «Community as a Form of Research» актёр Стивен Грэм выбрал куртку из резинированной кожи линии Ghost, а рэпер Skepta — плотную нейлоновую модель на подкладке PrimaLoft.",
+        "Резинированные ткани (Raso Gommato) Stone Island начал выпускать в 1983 году — одна из первых фирменных обработок, придуманных основателем компании Массимо Ости.",
+        "Линия Ghost — монохромные вещи, где даже нашивка бренда сделана в цвет ткани, — впервые вышла в коллекции Spring/Summer '011, то есть в 2011 году.",
+        "Вопросы участникам кампании курировал куратор Ханс Ульрих Обрист, фотографии сделаны на белом фоне без постановочных декораций."
+      ],
+      "sources": [
+        "https://pausemag.co.uk/2026/09/stone-island-unveils-fall-2026-campaign/",
+        "https://en.wikipedia.org/wiki/Stone_Island",
+        "https://www.highsnobiety.com/p/means-get-ghosted-stone-island/"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "mowalola-air-jordan-14-2026",
+      "used": false,
+      "brand": "Jordan Brand",
+      "what": "Дизайнер Mowalola Ogunlesi выпускает капсулу с Jordan Brand — переосмысленный Air Jordan 14 и кроссовок-мул на его основе, релиз 18 сентября 2026",
+      "when": "18 сентября 2026",
+      "angle": "Силуэт для капсулы выбран не случайно: это кроссовок, в котором Джордан завершил карьеру в Chicago Bulls",
+      "facts": [
+        "Air Jordan 14 вышел в октябре 1998 года, его спроектировали Тинкер Хэтфилд и Марк Смит.",
+        "Форму кроссовка вдохновил спортивный автомобиль Ferrari 550 Maranello, которым владел Майкл Джордан.",
+        "В этих кроссовках Джордан забил победный бросок в финале НБА 1998 года против «Юта Джаз» — свой последний матч за Chicago Bulls, из-за чего модель получила прозвище The Last Shot.",
+        "Mowalola Ogunlesi — британско-нигерийский дизайнер, выпускница Central Saint Martins; для капсулы с Jordan Brand она сделала кроссовок-мул и клетчатый спортивный костюм."
+      ],
+      "sources": [
+        "https://houseofheat.co/jordan/mowalola-air-jordan-14",
+        "https://en.wikipedia.org/wiki/Air_Jordan",
+        "https://en.wikipedia.org/wiki/Mowalola_Ogunlesi"
+      ],
+      "notes": "Цена расходится: WWD называет $255, House of Heat пишет, что цена и точная дата ещё не подтверждены официально."
+    }
+  ]
+}
