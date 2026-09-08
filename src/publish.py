@@ -116,6 +116,12 @@ def send_for_approval(post: dict, path: Path, chat_ids: list[str]) -> None:
     Ведущих несколько, поэтому пост уходит каждому. Решение принимается первым
     нажатием: второму кнопка честно ответит, что поста в очереди уже нет.
     """
+    # Отметка «уже у ведущих»: пост остаётся в очереди, пока не нажали кнопку,
+    # а публикатор запускается по расписанию — без отметки он присылал бы
+    # один и тот же пост каждые несколько часов.
+    post["sent_at"] = state.iso()
+    state.write_json(path, post)
+
     rubric = config.RUBRIC_BY_KEY.get(post.get("rubric", ""))
     title = rubric.title if rubric else post.get("rubric", "")
     brand = post.get("brand", "")
@@ -208,7 +214,12 @@ def main() -> int:
         print(f"Опубликовано: {path.name}. Осталось в очереди: {queue_left()}")
     else:
         # В личку пост уходит с кнопками и остаётся в очереди, пока кто-то
-        # из ведущих не нажмёт «В канал» или «Удалить».
+        # из ведущих не нажмёт «В канал» или «Удалить». Пока решения нет,
+        # второй раз не шлём: расписание иначе долбит одним и тем же постом.
+        if post.get("sent_at") and not args.force:
+            print(f"{path.name} ждёт решения с {post['sent_at']} — повторно не шлю. "
+                  f"Нужно ещё раз — запусти с --force.")
+            return 0
         send_for_approval(post, path, config.admin_ids())
         print(f"Отправлено на утверждение: {path.name}")
 
