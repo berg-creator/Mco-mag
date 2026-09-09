@@ -22,7 +22,7 @@ import logging
 import random
 from pathlib import Path
 
-from . import config, llm, quality, state, telegram
+from . import commons, config, llm, quality, state, telegram
 
 log = logging.getLogger("compose")
 
@@ -39,29 +39,38 @@ def save_post(rubric_key: str, text: str, source: dict) -> Path:
 
     Разметку чистим сразу при сохранении, чтобы в очереди лежал ровно тот текст,
     который уйдёт в канал: иначе просмотр очереди врёт.
+
+    Иллюстрация ищется здесь же, а не при отправке: найденное записывается
+    в пост, ведущие видят картинку в превью и утверждают именно её. Ищи
+    публикатор сам — в канал ушло бы не то, что утвердили, потому что выдача
+    Commons со временем меняется.
     """
     config.QUEUE.mkdir(parents=True, exist_ok=True)
     stamp = state.now().strftime("%Y%m%d-%H%M%S")
     suffix = random.randint(1000, 9999)
     path = config.QUEUE / f"{stamp}-{suffix}-{rubric_key}.json"
 
-    state.write_json(
-        path,
-        {
-            "rubric": rubric_key,
-            "text": telegram.sanitize(text),
-            "created_at": state.iso(),
-            # Тип поста и поля маркировки заведены с первого дня: дописать их
-            # в готовый формат дороже, чем предусмотреть сейчас (см. config).
-            "kind": "post",
-            "advertiser": "",
-            "erid": "",
-            "brand": source.get("brand", ""),
-            "story_id": source.get("story_id", ""),
-            "sources": source.get("sources", []),
-            "cover": "",
-        },
-    )
+    post = {
+        "rubric": rubric_key,
+        "text": telegram.sanitize(text),
+        "created_at": state.iso(),
+        # Тип поста и поля маркировки заведены с первого дня: дописать их
+        # в готовый формат дороже, чем предусмотреть сейчас (см. config).
+        "kind": "post",
+        "advertiser": "",
+        "erid": "",
+        "brand": source.get("brand", ""),
+        "story_id": source.get("story_id", ""),
+        "sources": source.get("sources", []),
+        "cover": "",
+        "cover_credit": "",
+    }
+
+    pic = commons.fill(post)
+    if pic is None:
+        log.info("%s: фото не нашлось, пост выйдет с карточкой", path.name)
+
+    state.write_json(path, post)
     return path
 
 

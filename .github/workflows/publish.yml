@@ -43,6 +43,14 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Обложки постов рисуются шрифтом с диска: встроенный в Pillow кириллицы
+      # не знает. На ubuntu-latest DejaVu обычно есть, но если нет — доставляем.
+      # Шаг не критичен: без шрифта пост уйдёт текстом, ронять из-за картинки
+      # публикацию нельзя.
+      - name: Шрифт для обложек
+        continue-on-error: true
+        run: sudo apt-get install -y -qq fonts-dejavu-core
+
       - name: Опубликовать следующий пост
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

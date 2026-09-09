@@ -1,12 +1,13 @@
 {
   "advertiser": "",
   "brand": "Stone Island",
-  "cover": "",
+  "cover": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tela_stella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "cover_credit": "На фото: Tela stella · Pippopoppi · CC BY-SA 4.0, Wikimedia Commons",
   "created_at": "2026-09-08T11:52:32+00:00",
   "erid": "",
   "kind": "post",
   "rubric": "history",
-  "sent_at": "2026-09-08T18:41:01+00:00",
+  "sent_at": "2026-09-09T10:51:43+00:00",
   "sources": [
     "https://en.wikipedia.org/wiki/Stone_Island"
   ],

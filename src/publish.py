@@ -21,7 +21,7 @@ import logging
 from datetime import timedelta
 from pathlib import Path
 
-from . import config, state, telegram
+from . import config, cover, state, telegram
 
 log = logging.getLogger("publish")
 
@@ -64,21 +64,49 @@ def render(post: dict) -> str:
     return f"{text}\n\n<i>{label}</i>"
 
 
-def send(post: dict, chat_id: str) -> None:
-    """Отправляет пост: с обложкой, если она есть и текст влезает в подпись.
+def caption(post: dict, credit: str = "") -> str:
+    """Подпись к фото: текст поста и, если фото чужое, кто его снял.
 
-    Пост без картинки в канале про одежду не читают, но текст важнее картинки:
-    если обложка не ушла, пост всё равно должен выйти.
+    Атрибуция приклеивается здесь, а не в тексте поста: у поста, ушедшего
+    без картинки, автора фото упоминать незачем.
     """
     text = render(post)
-    cover = post.get("cover", "")
+    return f"{text}\n\n<i>{credit}</i>" if credit else text
 
-    if cover and len(telegram.sanitize(text)) <= telegram.MAX_CAPTION:
+
+def send(post: dict, chat_id: str) -> None:
+    """Отправляет пост с картинкой, если она влезает в подпись к фото.
+
+    Порядок такой: настоящее фото вещи по ссылке в поле `cover` (его находит
+    `src.commons` на Wikimedia или кладёт владелец), а если фото нет — своя
+    карточка с заголовком. Пост без картинки в канале про одежду не читают,
+    но карточка — заглушка: иллюстрация вещи лучше всегда.
+
+    Текст важнее картинки, поэтому каждая попытка подстрахована: не ушло
+    фото — уходит карточка, не ушла карточка — уходит текст. Не выйти
+    пост не может.
+    """
+    url = post.get("cover", "")
+    full = caption(post, post.get("cover_credit", ""))
+
+    # Подпись к фото ограничена 1024 знаками, и обрезать в ней нечего:
+    # ни текст поста, ни имя автора фото. Не влезло — картинки не будет.
+    if url and len(telegram.sanitize(full)) <= telegram.MAX_CAPTION:
         try:
-            telegram.send_photo(chat_id, cover, text)
+            telegram.send_photo(chat_id, url, full)
             return
         except telegram.TelegramError as exc:
-            log.warning("Фото не ушло (%s), отправляю текстом", exc)
+            log.warning("Фото по ссылке не ушло (%s), рисую карточку", exc)
+
+    text = render(post)
+    if len(telegram.sanitize(text)) <= telegram.MAX_CAPTION:
+        card = cover.draw(post)
+        if card is not None:
+            try:
+                telegram.send_photo_file(chat_id, card, text)
+                return
+            except telegram.TelegramError as exc:
+                log.warning("Карточка не ушла (%s), отправляю текстом", exc)
 
     telegram.send_message(chat_id, text)
 
@@ -198,7 +226,8 @@ def main() -> int:
     if args.dry_run:
         print(f"\nФайл: {path.name}")
         print(f"Рубрика: {post.get('rubric')} · {post.get('brand', '')}")
-        print(f"Тип: {post.get('kind', 'post')} · обложка: {post.get('cover') or 'нет'}\n")
+        print(f"Тип: {post.get('kind', 'post')}")
+        print(f"Обложка: {describe_cover(post)}\n")
         print(render(post))
         return 0
 
@@ -224,6 +253,21 @@ def main() -> int:
         print(f"Отправлено на утверждение: {path.name}")
 
     return 0
+
+
+def describe_cover(post: dict) -> str:
+    """Что уйдёт картинкой к этому посту — для сухого прогона."""
+    if post.get("cover"):
+        full = caption(post, post.get("cover_credit", ""))
+        if len(telegram.sanitize(full)) <= telegram.MAX_CAPTION:
+            return f"фото {post['cover']}\n          {post.get('cover_credit', '')}"
+        return "нет: пост с подписью автора фото не влезает в 1024 знака"
+    if len(telegram.sanitize(render(post))) > telegram.MAX_CAPTION:
+        return f"нет: текст длиннее подписи к фото ({telegram.MAX_CAPTION} знаков)"
+    card = cover.draw(post)
+    if card is None:
+        return "нет: шрифта для карточки не нашлось"
+    return f"карточка-заглушка {card}\n          (фото на Commons не нашлось)"
 
 
 def queue_left() -> int:
