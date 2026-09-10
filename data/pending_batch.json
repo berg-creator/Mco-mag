@@ -1,0 +1,491 @@
+{
+  "batch_id": "msgbatch_014zmXCSFt5s853BCpQ4LMBX",
+  "jobs": [
+    {
+      "custom_id": "job-001-history",
+      "payload": {
+        "angle": "Ткани, которых до этого не существовало",
+        "brand": {
+          "city": "Раварино",
+          "country": "Италия",
+          "founded": 1982,
+          "founder": "Массимо Ости",
+          "name": "Stone Island"
+        },
+        "facts": [
+          "1983 год — Raso Gommato.",
+          "1987 год — ткань, меняющая цвет от температуры, и резиновая шерсть.",
+          "1991 год — отражающая ткань."
+        ],
+        "notes": "",
+        "roots": [
+          "cp-company"
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Stone_Island",
+          "https://en.wikipedia.org/wiki/Massimo_Osti"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Stone Island",
+        "brand_slug": "stone-island",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Stone_Island",
+          "https://en.wikipedia.org/wiki/Massimo_Osti"
+        ],
+        "story_id": "si-fabrics"
+      }
+    },
+    {
+      "custom_id": "job-002-history",
+      "payload": {
+        "angle": "Как горная марка оказалась в моде",
+        "brand": {
+          "city": "Анси",
+          "country": "Франция",
+          "founded": 1947,
+          "founder": "Франсуа Саломон",
+          "name": "Salomon"
+        },
+        "facts": [
+          "В 1997 году Salomon купила adidas, компания какое-то время называлась Adidas-Salomon AG.",
+          "В 2005 году adidas продала её финской Amer Sports.",
+          "Модель XT-6 подхватила мода в 2023 году."
+        ],
+        "notes": "Года выхода в трейлраннинг источник не даёт, про XT-Wings в нём ничего нет. Про XT-6 сказано только то, что модель подхватила мода в 2023 году.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Salomon_Group"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Salomon",
+        "brand_slug": "salomon",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Salomon_Group"
+        ],
+        "story_id": "salomon-owners"
+      }
+    },
+    {
+      "custom_id": "job-003-history",
+      "payload": {
+        "angle": "Кроссовки, которые выросли из лыжной мастерской",
+        "brand": {
+          "city": "Анси",
+          "country": "Франция",
+          "founded": 1947,
+          "founder": "Франсуа Саломон",
+          "name": "Salomon"
+        },
+        "facts": [
+          "Компанию основал в 1947 году в Анси Франсуа Саломон.",
+          "Начиналась она с производства кантов для лыж в маленькой мастерской.",
+          "Превращение в глобальную марку для спорта на открытом воздухе связывают с Жоржем Саломоном."
+        ],
+        "notes": "Года выхода в трейлраннинг источник не даёт, про XT-Wings в нём ничего нет. Про XT-6 сказано только то, что модель подхватила мода в 2023 году.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Salomon_Group"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Salomon",
+        "brand_slug": "salomon",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Salomon_Group"
+        ],
+        "story_id": "salomon-ski-edges"
+      }
+    },
+    {
+      "custom_id": "job-004-history",
+      "payload": {
+        "angle": "Ботинок с раздвоенным носком",
+        "brand": {
+          "city": "Париж",
+          "country": "Франция",
+          "founded": 1988,
+          "founder": "Мартин Маржела и Дженни Мейренс",
+          "name": "Maison Margiela"
+        },
+        "facts": [
+          "Tabi показали в 1989 году, в производство их ввели в 1992-м."
+        ],
+        "notes": "По tabi источник говорит: показаны в 1989 году, введены в производство в 1992-м. Если пишешь про год, оговаривай, о чём именно речь.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Maison Margiela",
+        "brand_slug": "maison-margiela",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ],
+        "story_id": "margiela-tabi"
+      }
+    },
+    {
+      "custom_id": "job-005-history",
+      "payload": {
+        "angle": "Ярлык без названия и числа вместо имени линии",
+        "brand": {
+          "city": "Париж",
+          "country": "Франция",
+          "founded": 1988,
+          "founder": "Мартин Маржела и Дженни Мейренс",
+          "name": "Maison Margiela"
+        },
+        "facts": [
+          "Вещи помечались пустым белым ярлыком, пришитым четырьмя белыми стежками по углам.",
+          "В 1997 году дом ввёл нумерацию: линию обозначает обведённая цифра, а не название."
+        ],
+        "notes": "По tabi источник говорит: показаны в 1989 году, введены в производство в 1992-м. Если пишешь про год, оговаривай, о чём именно речь.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Maison Margiela",
+        "brand_slug": "maison-margiela",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ],
+        "story_id": "margiela-blank-label"
+      }
+    },
+    {
+      "custom_id": "job-006-history",
+      "payload": {
+        "angle": "Почему бренд поменял имя через семь лет после запуска",
+        "brand": {
+          "city": "Болонья",
+          "country": "Италия",
+          "founded": 1971,
+          "founder": "Массимо Ости",
+          "name": "C.P. Company"
+        },
+        "facts": [
+          "Компания начиналась под названием Chester Perry.",
+          "В 1978 году её переименовали в C.P. Company после исков от Chester Barrie и Fred Perry."
+        ],
+        "notes": "Год начала garment dyeing в источниках расходится: статья о C.P. Company называет 1974-й (метод «Tinto in capo»), статья о самом Ости — 1979-й. Точную дату в посте не называть либо сказать, что источники расходятся.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/C.P._Company"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "C.P. Company",
+        "brand_slug": "cp-company",
+        "sources": [
+          "https://en.wikipedia.org/wiki/C.P._Company"
+        ],
+        "story_id": "cp-chester-perry"
+      }
+    },
+    {
+      "custom_id": "job-007-history",
+      "payload": {
+        "angle": "Одежда, сшитая для тех, кто работает руками",
+        "brand": {
+          "city": "Детройт",
+          "country": "США",
+          "founded": 1889,
+          "founder": "Гамильтон Кархартт",
+          "name": "Carhartt"
+        },
+        "facts": [
+          "Компания основана в 1889 году в Детройте Гамильтоном Кархарттом.",
+          "Начиналась она с двух швейных машин и пяти рабочих.",
+          "Шили рабочую одежду для людей физического труда, куртки — из 12-унцевого хлопкового брезента."
+        ],
+        "notes": "Источник пишет про «12-унцевый хлопковый брезент», привычного термина duck canvas в статье нет — писать так, как в фактах.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Carhartt"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Carhartt",
+        "brand_slug": "carhartt",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Carhartt"
+        ],
+        "story_id": "carhartt-workwear"
+      }
+    },
+    {
+      "custom_id": "job-008-history",
+      "payload": {
+        "angle": "Как Париж встретил чёрное и необработанное",
+        "brand": {
+          "city": "Токио",
+          "country": "Япония",
+          "founded": 1969,
+          "founder": "Рей Кавакубо",
+          "name": "Comme des Garçons"
+        },
+        "facts": [
+          "Дебютный показ в Париже прошёл в 1981 году.",
+          "Французские критики восприняли его негативно: много чёрных потёртых тканей и необработанных швов.",
+          "В 1982 году критику вызвала и коллекция, которую назвали Destroy."
+        ],
+        "notes": "Даты основания две и обе верные: марка начата в Токио в 1969 году, юридически компания оформлена в 1973-м. Если называешь год — уточняй, о чём речь.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Comme des Garçons",
+        "brand_slug": "comme-des-garcons",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+        ],
+        "story_id": "cdg-paris-1981"
+      }
+    },
+    {
+      "custom_id": "job-009-history",
+      "payload": {
+        "angle": "Красить не ткань, а готовую вещь",
+        "brand": {
+          "city": "Болонья",
+          "country": "Италия",
+          "founded": 1971,
+          "founder": "Массимо Ости",
+          "name": "C.P. Company"
+        },
+        "facts": [
+          "Метод назывался «Tinto in capo» — окрашивание уже сшитого изделия.",
+          "Задача была снять с ткани жёсткость и дать вещи вид ношеной."
+        ],
+        "notes": "Год начала garment dyeing в источниках расходится: статья о C.P. Company называет 1974-й (метод «Tinto in capo»), статья о самом Ости — 1979-й. Точную дату в посте не называть либо сказать, что источники расходятся.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/C.P._Company",
+          "https://en.wikipedia.org/wiki/Massimo_Osti"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "C.P. Company",
+        "brand_slug": "cp-company",
+        "sources": [
+          "https://en.wikipedia.org/wiki/C.P._Company",
+          "https://en.wikipedia.org/wiki/Massimo_Osti"
+        ],
+        "story_id": "cp-garment-dyeing"
+      }
+    },
+    {
+      "custom_id": "job-010-history",
+      "payload": {
+        "angle": "Показы, которые проходили где угодно, кроме подиума",
+        "brand": {
+          "city": "Париж",
+          "country": "Франция",
+          "founded": 1988,
+          "founder": "Мартин Маржела и Дженни Мейренс",
+          "name": "Maison Margiela"
+        },
+        "facts": [
+          "Дебютный показ прошёл в 1988 году на Неделе моды в Париже.",
+          "В 1989 году дом показывал коллекцию на детской площадке в пригороде.",
+          "В 1992 году показ прошёл в парижском метро при свечах.",
+          "В 1998 году два сезона подряд коллекции показывали без живых моделей — с марионетками."
+        ],
+        "notes": "По tabi источник говорит: показаны в 1989 году, введены в производство в 1992-м. Если пишешь про год, оговаривай, о чём именно речь.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Maison Margiela",
+        "brand_slug": "maison-margiela",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Maison_Margiela"
+        ],
+        "story_id": "margiela-shows"
+      }
+    },
+    {
+      "custom_id": "job-011-history",
+      "payload": {
+        "angle": "Где эти кроссовки шьют на самом деле",
+        "brand": {
+          "city": "Бостон",
+          "country": "США",
+          "founded": 1906,
+          "founder": "Уильям Дж. Райли",
+          "name": "New Balance"
+        },
+        "facts": [
+          "Британскую фабрику компания открыла в 1982 году в Уоркингтоне.",
+          "В 1991 году производство переехало во Флимби.",
+          "В 1972 году компанию купил 28-летний Джим Дэвис."
+        ],
+        "notes": "Модели 320 в проверенном источнике нет, зато есть Trackster 1960 года. Систему нумерации моделей источник не объясняет — не выдумывай её.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/New_Balance"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "New Balance",
+        "brand_slug": "new-balance",
+        "sources": [
+          "https://en.wikipedia.org/wiki/New_Balance"
+        ],
+        "story_id": "nb-factories"
+      }
+    },
+    {
+      "custom_id": "job-012-history",
+      "payload": {
+        "angle": "Марка, выросшая из кузницы скалолазного снаряжения",
+        "brand": {
+          "city": "Вентура",
+          "country": "США",
+          "founded": 1973,
+          "founder": "Ивон Шуинар",
+          "name": "Patagonia"
+        },
+        "facts": [
+          "С 1957 года Ивон Шуинар продавал кованое вручную снаряжение для скалолазания через свою компанию Chouinard Equipment.",
+          "Первый магазин Patagonia, Great Pacific Iron Works, открылся в 1973 году в Вентуре."
+        ],
+        "notes": "Про флис Synchilla, отказ от скальных крючьев и кампанию «Don't Buy This Jacket» в проверенном источнике фактов нет — не писать, пока не подтвердится и не попадёт сюда.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Patagonia",
+        "brand_slug": "patagonia",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+        ],
+        "story_id": "patagonia-from-climbing"
+      }
+    },
+    {
+      "custom_id": "job-013-history",
+      "payload": {
+        "angle": "Куртка из пластиковых бутылок",
+        "brand": {
+          "city": "Вентура",
+          "country": "США",
+          "founded": 1973,
+          "founder": "Ивон Шуинар",
+          "name": "Patagonia"
+        },
+        "facts": [
+          "В 1993 году Patagonia первой в мире начала делать одежду из полиэстера, полученного из переработанных бутылок."
+        ],
+        "notes": "Про флис Synchilla, отказ от скальных крючьев и кампанию «Don't Buy This Jacket» в проверенном источнике фактов нет — не писать, пока не подтвердится и не попадёт сюда.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Patagonia",
+        "brand_slug": "patagonia",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+        ],
+        "story_id": "patagonia-recycled"
+      }
+    },
+    {
+      "custom_id": "job-014-history",
+      "payload": {
+        "angle": "Через сколько рук прошла марка",
+        "brand": {
+          "city": "Норт-Ванкувер",
+          "country": "Канада",
+          "founded": 1989,
+          "founder": "Дэйв Лейн",
+          "name": "Arc'teryx"
+        },
+        "facts": [
+          "В 2001 году компанию купила Salomon Group.",
+          "В 2005 году она перешла к Amer Sports.",
+          "В 2019 году контроль в Amer Sports получила китайская Anta Sports, выкупив 56%."
+        ],
+        "notes": "Марка начиналась под именем Rock Solid, нынешнее имя появилось в 1991 году вместе с Джереми Гардом — не приписывай ему основание компании.",
+        "roots": [],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Arc%27teryx"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Arc'teryx",
+        "brand_slug": "arcteryx",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Arc%27teryx"
+        ],
+        "story_id": "arcteryx-owners"
+      }
+    },
+    {
+      "custom_id": "job-015-history",
+      "payload": {
+        "angle": "Британский бренд, выросший из итальянского архива",
+        "brand": {
+          "city": "",
+          "country": "Великобритания",
+          "founded": 2008,
+          "founder": "Донрад Дункан",
+          "name": "Ma.Strum"
+        },
+        "facts": [
+          "Ma.Strum запустили как партнёрство с Massimo Osti Archive — архивом наработок Массимо Ости.",
+          "Дизайнер и создатель марки — Донрад Дункан.",
+          "Студию Ости после его смерти в 2005 году ведут сын Лоренцо и дочь Агата.",
+          "С 2011 года Ma.Strum полностью независим от архива и остаётся частной британской компанией."
+        ],
+        "notes": "Статьи в Wikipedia нет, факты взяты с сайта бренда и 80's Casual Classics. Год запуска в источниках расходится: сайт бренда называет 2008-й, часть публикаций — 2009-й. В посте либо не называть год, либо сказать, что источники расходятся.",
+        "roots": [
+          "cp-company",
+          "stone-island"
+        ],
+        "sources": [
+          "https://mastrum.com/the-brand",
+          "https://www.80scasualclassics.co.uk/blogs/blog/lorenzo-osti-ma-strum-studio-osti"
+        ]
+      },
+      "rubric": "history",
+      "source": {
+        "brand": "Ma.Strum",
+        "brand_slug": "ma-strum",
+        "sources": [
+          "https://mastrum.com/the-brand",
+          "https://www.80scasualclassics.co.uk/blogs/blog/lorenzo-osti-ma-strum-studio-osti"
+        ],
+        "story_id": "ma-strum-archive"
+      }
+    }
+  ],
+  "submitted_at": "2026-09-10T10:46:15+00:00"
+}
