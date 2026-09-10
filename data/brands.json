@@ -1,375 +1,414 @@
 {
   "brands": [
     {
-      "slug": "cp-company",
-      "name": "C.P. Company",
       "circle": "techno",
-      "country": "Италия",
       "city": "Болонья",
+      "country": "Италия",
       "founded": 1971,
       "founder": "Массимо Ости",
-      "roots": [],
       "in_store": false,
+      "name": "C.P. Company",
       "notes": "Год начала garment dyeing в источниках расходится: статья о C.P. Company называет 1974-й (метод «Tinto in capo»), статья о самом Ости — 1979-й. Точную дату в посте не называть либо сказать, что источники расходятся.",
+      "roots": [],
+      "slug": "cp-company",
       "sources": [
         "https://en.wikipedia.org/wiki/C.P._Company",
         "https://en.wikipedia.org/wiki/Massimo_Osti"
       ],
       "stories": [
         {
-          "id": "cp-goggle-1988",
           "angle": "Зачем в капюшон куртки вшили линзы",
-          "used": false,
           "facts": [
             "В 1988 году вышла куртка Mille Miglia — её назвали в честь гонки классических автомобилей по открытым дорогам Италии.",
             "В капюшон вшиты две прозрачные линзы, ещё одна — на рукаве, чтобы смотреть на часы не задирая манжет.",
             "Позже за этой моделью закрепилось второе имя — goggle jacket."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+          "id": "cp-goggle-1988",
+          "sources": [
+            "https://en.wikipedia.org/wiki/C.P._Company"
+          ],
+          "used": false
         },
         {
-          "id": "cp-chester-perry",
           "angle": "Почему бренд поменял имя через семь лет после запуска",
-          "used": false,
           "facts": [
             "Компания начиналась под названием Chester Perry.",
             "В 1978 году её переименовали в C.P. Company после исков от Chester Barrie и Fred Perry."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+          "id": "cp-chester-perry",
+          "sources": [
+            "https://en.wikipedia.org/wiki/C.P._Company"
+          ],
+          "used": false
         },
         {
-          "id": "cp-garment-dyeing",
           "angle": "Красить не ткань, а готовую вещь",
-          "used": false,
           "facts": [
             "Метод назывался «Tinto in capo» — окрашивание уже сшитого изделия.",
             "Задача была снять с ткани жёсткость и дать вещи вид ношеной."
           ],
+          "id": "cp-garment-dyeing",
           "sources": [
             "https://en.wikipedia.org/wiki/C.P._Company",
             "https://en.wikipedia.org/wiki/Massimo_Osti"
-          ]
+          ],
+          "used": false
         },
         {
-          "id": "cp-owners",
           "angle": "Кому принадлежал бренд после ухода основателя",
-          "used": false,
           "facts": [
             "В 1984 году Массимо Ости продал долю группе GFT (Gruppo Finanziario Tessile).",
             "В 1993 году компания перешла к Карло Риветти.",
             "В 2010 году её купила FGF Industry Энцо Фуско, в 2015-м — гонконгская Tristate Holdings.",
             "В 2019 году президентом компании стал Лоренцо Ости, сын основателя."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/C.P._Company"]
+          "id": "cp-owners",
+          "sources": [
+            "https://en.wikipedia.org/wiki/C.P._Company"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "stone-island",
-      "name": "Stone Island",
       "circle": "techno",
-      "country": "Италия",
       "city": "Раварино",
+      "country": "Италия",
       "founded": 1982,
       "founder": "Массимо Ости",
-      "roots": ["cp-company"],
       "in_store": false,
+      "name": "Stone Island",
       "notes": "",
+      "roots": [
+        "cp-company"
+      ],
+      "slug": "stone-island",
       "sources": [
         "https://en.wikipedia.org/wiki/Stone_Island",
         "https://en.wikipedia.org/wiki/Massimo_Osti"
       ],
       "stories": [
         {
-          "id": "si-tela-stella",
           "angle": "Бренд, который начался с грузового брезента",
-          "used": false,
           "facts": [
             "Ости взял ткань, которой накрывают грузовики, и обработал её стиркой с камнем (stone wash).",
             "Из неё вышла первая коллекция 1982 года: семь вещей верхней одежды в шести двухцветных вариантах.",
             "Ткань получила имя Tela Stella."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+          "id": "si-tela-stella",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stone_Island"
+          ],
+          "used": false
         },
         {
-          "id": "si-name-conrad",
           "angle": "Откуда взялось название и почему на рукаве компас",
-          "used": false,
           "facts": [
             "Название пришло из романов Джозефа Конрада, где часто встречаются слова «камень» и «остров».",
             "Логотип отсылает к компасу и дополнен морской звездой."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+          "id": "si-name-conrad",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stone_Island"
+          ],
+          "used": false
         },
         {
-          "id": "si-fabrics",
           "angle": "Ткани, которых до этого не существовало",
-          "used": false,
           "facts": [
             "1983 год — Raso Gommato.",
             "1987 год — ткань, меняющая цвет от температуры, и резиновая шерсть.",
             "1991 год — отражающая ткань."
           ],
+          "id": "si-fabrics",
           "sources": [
             "https://en.wikipedia.org/wiki/Stone_Island",
             "https://en.wikipedia.org/wiki/Massimo_Osti"
-          ]
+          ],
+          "used": false
         },
         {
-          "id": "si-owners-moncler",
           "angle": "Сколько стоит бренд, начавшийся с брезента",
-          "used": false,
           "facts": [
             "В 1983 году половину компании купила GFT, в 1991-м — оставшуюся половину.",
             "В 1993 году бренд перешёл к Карло Риветти.",
             "В 2017 году 30% приобрёл сингапурский фонд Temasek.",
             "В 2020–2021 годах Stone Island купил Moncler за 1,15 млрд евро."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Stone_Island"]
+          "id": "si-owners-moncler",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stone_Island"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "ten-c",
-      "name": "Ten C",
       "circle": "techno",
-      "country": "Италия",
       "city": "",
+      "country": "Италия",
       "founded": 2010,
       "founder": "Алессандро Пунджетти и Пол Харви",
-      "roots": [],
       "in_store": false,
+      "name": "Ten C",
       "notes": "Оба основателя связаны со Stone Island, но год и должности в этом сеансе не подтверждены — родословную к Stone Island в постах не проводить, пока факт не проверен и не записан сюда.",
+      "roots": [],
+      "slug": "ten-c",
       "sources": [
         "https://hypebeast.com/2021/8/ten-c-ojj-fabric-interview-what-the-tech",
         "https://www.highsnobiety.com/p/ten-c-fw22-interview/"
       ],
       "stories": [
         {
-          "id": "ten-c-ojj",
           "angle": "Бренд, который начался не с вещи, а с ткани",
-          "used": false,
           "facts": [
             "Ten C основали в 2010 году Алессандро Пунджетти и Пол Харви.",
             "Отправной точкой была ткань OJJ — Original Japanese Jersey, смесь нейлона и полиэстера японского производства.",
             "Название бренда — сокращение от The Emperor's New Clothes."
           ],
+          "id": "ten-c-ojj",
           "sources": [
             "https://hypebeast.com/2021/8/ten-c-ojj-fabric-interview-what-the-tech",
             "https://www.highsnobiety.com/p/ten-c-fw22-interview/"
-          ]
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "ma-strum",
-      "name": "Ma.Strum",
       "circle": "techno",
-      "country": "Великобритания",
       "city": "",
+      "country": "Великобритания",
       "founded": 2008,
       "founder": "Донрад Дункан",
-      "roots": ["cp-company", "stone-island"],
       "in_store": false,
+      "name": "Ma.Strum",
       "notes": "Статьи в Wikipedia нет, факты взяты с сайта бренда и 80's Casual Classics. Год запуска в источниках расходится: сайт бренда называет 2008-й, часть публикаций — 2009-й. В посте либо не называть год, либо сказать, что источники расходятся.",
+      "roots": [
+        "cp-company",
+        "stone-island"
+      ],
+      "slug": "ma-strum",
       "sources": [
         "https://mastrum.com/the-brand",
         "https://www.80scasualclassics.co.uk/blogs/blog/lorenzo-osti-ma-strum-studio-osti"
       ],
       "stories": [
         {
-          "id": "ma-strum-archive",
           "angle": "Британский бренд, выросший из итальянского архива",
-          "used": false,
           "facts": [
             "Ma.Strum запустили как партнёрство с Massimo Osti Archive — архивом наработок Массимо Ости.",
             "Дизайнер и создатель марки — Донрад Дункан.",
             "Студию Ости после его смерти в 2005 году ведут сын Лоренцо и дочь Агата.",
             "С 2011 года Ma.Strum полностью независим от архива и остаётся частной британской компанией."
           ],
+          "id": "ma-strum-archive",
           "sources": [
             "https://mastrum.com/the-brand",
             "https://www.80scasualclassics.co.uk/blogs/blog/lorenzo-osti-ma-strum-studio-osti"
-          ]
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "nemen",
-      "name": "Nemen",
       "circle": "techno",
-      "country": "Италия",
       "city": "Милан",
+      "country": "Италия",
       "founded": 2012,
       "founder": "Леонардо Фазоло",
-      "roots": [],
       "in_store": false,
+      "name": "Nemen",
       "notes": "Работа основателя в Stone Island и C.P. Company упоминается в MR PORTER и nss magazine, но не подтверждена первичным источником — родословную к Ости в постах не проводить, пока факт не проверен и не переписан сюда как подтверждённый.",
+      "roots": [],
+      "slug": "nemen",
       "sources": [
         "https://www.mrporter.com/en-us/journal/fashion/the-italian-sportswear-brand-to-know-714250",
         "https://www.nssmag.com/en/fashion/17925/nemen"
       ],
       "stories": [
         {
-          "id": "nemen-dyeing",
           "angle": "Окраска, которая занимает недели",
-          "used": false,
           "facts": [
             "Nemen основал в 2012 году в Милане Леонардо Фазоло.",
             "Бренд строится на сложных методах окраски и переходах цвета, каждая вещь красится отдельно.",
             "Процесс занимает несколько недель, поэтому марка с самого запуска работает малыми партиями."
           ],
+          "id": "nemen-dyeing",
           "sources": [
             "https://www.mrporter.com/en-us/journal/fashion/the-italian-sportswear-brand-to-know-714250",
             "https://www.nssmag.com/en/fashion/17925/nemen"
-          ]
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "maison-margiela",
-      "name": "Maison Margiela",
       "circle": "archive",
-      "country": "Франция",
       "city": "Париж",
+      "country": "Франция",
       "founded": 1988,
       "founder": "Мартин Маржела и Дженни Мейренс",
-      "roots": [],
       "in_store": false,
+      "name": "Maison Margiela",
       "notes": "По tabi источник говорит: показаны в 1989 году, введены в производство в 1992-м. Если пишешь про год, оговаривай, о чём именно речь.",
-      "sources": ["https://en.wikipedia.org/wiki/Maison_Margiela"],
+      "roots": [],
+      "slug": "maison-margiela",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Maison_Margiela"
+      ],
       "stories": [
         {
-          "id": "margiela-blank-label",
           "angle": "Ярлык без названия и числа вместо имени линии",
-          "used": false,
           "facts": [
             "Вещи помечались пустым белым ярлыком, пришитым четырьмя белыми стежками по углам.",
             "В 1997 году дом ввёл нумерацию: линию обозначает обведённая цифра, а не название."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Maison_Margiela"]
+          "id": "margiela-blank-label",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Maison_Margiela"
+          ],
+          "used": false
         },
         {
-          "id": "margiela-shows",
           "angle": "Показы, которые проходили где угодно, кроме подиума",
-          "used": false,
           "facts": [
             "Дебютный показ прошёл в 1988 году на Неделе моды в Париже.",
             "В 1989 году дом показывал коллекцию на детской площадке в пригороде.",
             "В 1992 году показ прошёл в парижском метро при свечах.",
             "В 1998 году два сезона подряд коллекции показывали без живых моделей — с марионетками."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Maison_Margiela"]
+          "id": "margiela-shows",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Maison_Margiela"
+          ],
+          "used": false
         },
         {
-          "id": "margiela-tabi",
           "angle": "Ботинок с раздвоенным носком",
-          "used": false,
           "facts": [
             "Tabi показали в 1989 году, в производство их ввели в 1992-м."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Maison_Margiela"]
+          "id": "margiela-tabi",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Maison_Margiela"
+          ],
+          "used": false
         },
         {
-          "id": "margiela-after-martin",
           "angle": "Что стало с домом после ухода основателя",
-          "used": false,
           "facts": [
             "В 2002 году дом купила группа OTB Ренцо Россо.",
             "В октябре 2009 года Мартин Маржела ушёл с поста креативного директора.",
             "В октябре 2014 года креативным директором назначили Джона Гальяно."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Maison_Margiela"]
+          "id": "margiela-after-martin",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Maison_Margiela"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "comme-des-garcons",
-      "name": "Comme des Garçons",
       "circle": "archive",
-      "country": "Япония",
       "city": "Токио",
+      "country": "Япония",
       "founded": 1969,
       "founder": "Рей Кавакубо",
-      "roots": [],
       "in_store": false,
+      "name": "Comme des Garçons",
       "notes": "Даты основания две и обе верные: марка начата в Токио в 1969 году, юридически компания оформлена в 1973-м. Если называешь год — уточняй, о чём речь.",
-      "sources": ["https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"],
+      "roots": [],
+      "slug": "comme-des-garcons",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+      ],
       "stories": [
         {
-          "id": "cdg-paris-1981",
           "angle": "Как Париж встретил чёрное и необработанное",
-          "used": false,
           "facts": [
             "Дебютный показ в Париже прошёл в 1981 году.",
             "Французские критики восприняли его негативно: много чёрных потёртых тканей и необработанных швов.",
             "В 1982 году критику вызвала и коллекция, которую назвали Destroy."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"]
+          "id": "cdg-paris-1981",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+          ],
+          "used": false
         },
         {
-          "id": "cdg-dover-street",
           "angle": "Магазин, устроенный как выставка",
-          "used": false,
           "facts": [
             "Dover Street Market открылся в Лондоне в 2004 году.",
             "Нью-йоркский Dover Street Market открылся в декабре 2013 года."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"]
+          "id": "cdg-dover-street",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+          ],
+          "used": false
         },
         {
-          "id": "cdg-lines",
           "angle": "Как из одной марки выросло семейство линий",
-          "used": false,
           "facts": [
             "Мужская линия появилась в 1978 году.",
             "Парфюмерная линия создана в 1993 году.",
             "Линия Play производится в Японии, Испании и Турции."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"]
+          "id": "cdg-lines",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "raf-simons",
-      "name": "Raf Simons",
       "circle": "archive",
-      "country": "Бельгия",
       "city": "",
+      "country": "Бельгия",
       "founded": 1995,
       "founder": "Раф Симонс",
-      "roots": [],
       "in_store": false,
+      "name": "Raf Simons",
       "notes": "",
-      "sources": ["https://en.wikipedia.org/wiki/Raf_Simons"],
+      "roots": [],
+      "slug": "raf-simons",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Raf_Simons"
+      ],
       "stories": [
         {
-          "id": "raf-furniture-school",
           "angle": "Мебельщик, который пришёл в одежду",
-          "used": false,
           "facts": [
             "Раф Симонс родился 12 января 1968 года.",
             "В 1991 году он окончил школу искусств LUCA в Генке по специальности промышленный и мебельный дизайн.",
             "Первая коллекция собственной марки вышла осенью-зимой 1995 года.",
             "Первый показ на парижской неделе моды состоялся в сезоне осень-зима 1997 года."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Raf_Simons"]
+          "id": "raf-furniture-school",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Raf_Simons"
+          ],
+          "used": false
         },
         {
-          "id": "raf-kraftwerk",
           "angle": "Коллекция, собранная вокруг музыки",
-          "used": false,
           "facts": [
             "Коллекция осень-зима 1998 года называлась Radioactivity и отсылала к участникам Kraftwerk.",
             "Коллекция весна-лето 2000 года отталкивалась от студентов MENSA и культуры габбер.",
             "Коллекцию весна-лето 2002 года называют одной из самых влиятельных у марки."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Raf_Simons"]
+          "id": "raf-kraftwerk",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Raf_Simons"
+          ],
+          "used": false
         },
         {
-          "id": "raf-houses",
           "angle": "Куда он уходил из собственной марки и чем это кончилось",
-          "used": false,
           "facts": [
             "С июня 2005 по 2012 год Симонс работал в Jil Sander, последней стала коллекция осень-зима 2012 года.",
             "С апреля 2012 по октябрь 2015 года он возглавлял Christian Dior, сменив на этом посту Джона Гальяно.",
@@ -377,429 +416,499 @@
             "С 1 апреля 2020 года — сокреативный директор Prada вместе с Миуччей Прадой.",
             "21 ноября 2022 года объявили, что коллекция весна-лето 2023 станет для его собственной марки последней."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Raf_Simons"]
+          "id": "raf-houses",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Raf_Simons"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "yohji-yamamoto",
-      "name": "Yohji Yamamoto",
       "circle": "archive",
-      "country": "Япония",
       "city": "Токио",
+      "country": "Япония",
       "founded": 1973,
       "founder": "Йоджи Ямамото",
-      "roots": [],
       "in_store": false,
+      "name": "Yohji Yamamoto",
       "notes": "1973 год — основание марки Y's, под собственным именем дизайнер показывается позже. Не путать эти две даты в тексте.",
-      "sources": ["https://en.wikipedia.org/wiki/Yohji_Yamamoto"],
+      "roots": [],
+      "slug": "yohji-yamamoto",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yohji_Yamamoto"
+      ],
       "stories": [
         {
-          "id": "yohji-law-degree",
           "angle": "Юрист, который сел за швейную машинку",
-          "used": false,
           "facts": [
             "Йоджи Ямамото родился 3 октября 1943 года.",
             "В 1966 году он получил диплом юриста в Университете Кэйо.",
             "В 1969 году окончил колледж моды Bunka.",
             "Марку Y's он основал в 1973 году."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Yohji_Yamamoto"]
+          "id": "yohji-law-degree",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yohji_Yamamoto"
+          ],
+          "used": false
         },
         {
-          "id": "yohji-paris-debut",
           "angle": "Как он выходил из Токио в мир",
-          "used": false,
           "facts": [
             "Дебют в Токио состоялся в 1977 году.",
             "В Париже он показался в 1981 году, в Нью-Йорке — в 1982-м.",
             "Силуэт строится на свободных, часто нарочито больших формах с драпировками."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Yohji_Yamamoto"]
+          "id": "yohji-paris-debut",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yohji_Yamamoto"
+          ],
+          "used": false
         },
         {
-          "id": "yohji-y3",
           "angle": "Что вышло, когда дизайнер сошёлся со спортивным брендом",
-          "used": false,
           "facts": [
             "Совместная линия Y-3 с adidas появилась в 2003 году."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Yohji_Yamamoto"]
+          "id": "yohji-y3",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yohji_Yamamoto"
+          ],
+          "used": false
         },
         {
-          "id": "yohji-bankruptcy",
           "angle": "Год, когда дом чуть не закрылся",
-          "used": false,
           "facts": [
             "В 2009 году долги компании превысили 65 миллионов долларов.",
             "Реструктуризация заняла 2009–2010 годы.",
             "К ноябрю 2010 года компания вышла из долгов."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Yohji_Yamamoto"]
+          "id": "yohji-bankruptcy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yohji_Yamamoto"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "helmut-lang",
-      "name": "Helmut Lang",
       "circle": "archive",
-      "country": "Австрия",
       "city": "Вена",
+      "country": "Австрия",
       "founded": 1986,
       "founder": "Хельмут Ланг",
-      "roots": [],
       "in_store": false,
+      "name": "Helmut Lang",
       "notes": "После 2005 года маркой владеет и управляет не основатель — приписывать сегодняшние коллекции Хельмуту Лангу нельзя.",
+      "roots": [],
+      "slug": "helmut-lang",
       "sources": [
         "https://en.wikipedia.org/wiki/Helmut_Lang_(artist)",
         "https://en.wikipedia.org/wiki/Helmut_Lang"
       ],
       "stories": [
         {
-          "id": "helmut-first-internet-show",
           "angle": "Первый показ, который выложили в интернет вместо подиума",
-          "used": false,
           "facts": [
             "Марка создана в 1986 году, первый показ прошёл в Париже в Центре Помпиду.",
             "Мужская линия запущена в 1987 году.",
             "В 1998 году компания переехала из Вены в Нью-Йорк и провела первый в истории моды показ в интернете."
           ],
+          "id": "helmut-first-internet-show",
           "sources": [
             "https://en.wikipedia.org/wiki/Helmut_Lang_(artist)",
             "https://en.wikipedia.org/wiki/Helmut_Lang"
-          ]
+          ],
+          "used": false
         },
         {
-          "id": "helmut-left-fashion",
           "angle": "Дизайнер, который продал марку и ушёл в искусство",
-          "used": false,
           "facts": [
             "В 1999 году Хельмут Ланг продал 51% компании группе Prada.",
             "В 2005 году он ушёл из собственной марки и оставил моду.",
             "С тех пор он живёт в Нью-Йорке и на Лонг-Айленде и работает как художник."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Helmut_Lang_(artist)"]
+          "id": "helmut-left-fashion",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Helmut_Lang_(artist)"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "supreme",
-      "name": "Supreme",
       "circle": "street",
-      "country": "США",
       "city": "Нью-Йорк",
+      "country": "США",
       "founded": 1994,
       "founder": "Джеймс Джеббиа",
-      "roots": [],
       "in_store": false,
+      "name": "Supreme",
       "notes": "",
-      "sources": ["https://en.wikipedia.org/wiki/Supreme_(brand)"],
+      "roots": [],
+      "slug": "supreme",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Supreme_(brand)"
+      ],
       "stories": [
         {
-          "id": "supreme-box-logo",
           "angle": "Откуда взялся красный прямоугольник",
-          "used": false,
           "facts": [
             "Магазин открылся в 1994 году на Лафайет-стрит в Нижнем Манхэттене.",
             "Джеймса Джеббиа вдохновила книга о работах художницы Барбары Крюгер.",
             "Логотип набран шрифтом Futura Heavy Oblique белым по красному."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Supreme_(brand)"]
+          "id": "supreme-box-logo",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Supreme_(brand)"
+          ],
+          "used": false
         },
         {
-          "id": "supreme-drops",
           "angle": "Кто придумал продавать одежду по четвергам",
-          "used": false,
           "facts": [
             "Марка выпускает небольшие партии вещей из текущей коллекции каждый четверг — в магазинах и онлайн.",
             "Эту схему продаж, известную как дропы, придумал именно Supreme."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Supreme_(brand)"]
+          "id": "supreme-drops",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Supreme_(brand)"
+          ],
+          "used": false
         },
         {
-          "id": "supreme-price",
           "angle": "Сколько стоит уличная марка",
-          "used": false,
           "facts": [
             "В 2020 году Supreme купила VF Corporation за 2,1 миллиарда долларов.",
             "В июле 2024 года EssilorLuxottica выкупила марку у VF за 1,5 миллиарда долларов.",
             "В 2017 году вышла коллаборация с Louis Vuitton — первая у марки с домом класса люкс."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Supreme_(brand)"]
+          "id": "supreme-price",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Supreme_(brand)"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "stussy",
-      "name": "Stüssy",
       "circle": "street",
-      "country": "США",
       "city": "Лагуна-Бич",
+      "country": "США",
       "founded": null,
       "founder": "Шон Стьюсси",
-      "roots": [],
       "in_store": false,
+      "name": "Stüssy",
       "notes": "Точного года основания источник не даёт — только «начало 1980-х». Год в посте не называть.",
-      "sources": ["https://en.wikipedia.org/wiki/Stussy"],
+      "roots": [],
+      "slug": "stussy",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stussy"
+      ],
       "stories": [
         {
-          "id": "stussy-signature",
           "angle": "Логотип, который начинался как подпись на доске",
-          "used": false,
           "facts": [
             "Шон Стьюсси родился в 1954 году и делал доски для сёрфинга в Калифорнии.",
             "В начале восьмидесятых он размашисто подписывал свои доски маркером с широким пером — эта подпись и стала логотипом.",
             "Начертание подписи он взял у своего дяди, Яна Стьюсси."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Stussy"]
+          "id": "stussy-signature",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stussy"
+          ],
+          "used": false
         },
         {
-          "id": "stussy-exit",
           "angle": "Основатель ушёл, а имя осталось",
-          "used": false,
           "facts": [
             "В 1996 году Шон Стьюсси оставил пост президента компании.",
             "Его долю выкупил партнёр Фрэнк Синатра-младший, соучредитель марки."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Stussy"]
+          "id": "stussy-exit",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stussy"
+          ],
+          "used": true
         }
       ]
     },
     {
-      "slug": "carhartt",
-      "name": "Carhartt",
       "circle": "street",
-      "country": "США",
       "city": "Детройт",
+      "country": "США",
       "founded": 1889,
       "founder": "Гамильтон Кархартт",
-      "roots": [],
       "in_store": false,
+      "name": "Carhartt",
       "notes": "Источник пишет про «12-унцевый хлопковый брезент», привычного термина duck canvas в статье нет — писать так, как в фактах.",
-      "sources": ["https://en.wikipedia.org/wiki/Carhartt"],
+      "roots": [],
+      "slug": "carhartt",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Carhartt"
+      ],
       "stories": [
         {
-          "id": "carhartt-workwear",
           "angle": "Одежда, сшитая для тех, кто работает руками",
-          "used": false,
           "facts": [
             "Компания основана в 1889 году в Детройте Гамильтоном Кархарттом.",
             "Начиналась она с двух швейных машин и пяти рабочих.",
             "Шили рабочую одежду для людей физического труда, куртки — из 12-унцевого хлопкового брезента."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Carhartt"]
+          "id": "carhartt-workwear",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carhartt"
+          ],
+          "used": false
         },
         {
-          "id": "carhartt-hip-hop",
           "angle": "Как рабочая куртка попала в хип-хоп",
-          "used": false,
           "facts": [
             "В 1990 году лейбл Tommy Boy Records использовал куртки Carhartt в своём промо.",
             "Это стало поворотной точкой для популярности марки в хип-хопе.",
             "В 1994 году появилась лицензия на отдельную линию Carhartt Work in Progress."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Carhartt"]
+          "id": "carhartt-hip-hop",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carhartt"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "arcteryx",
-      "name": "Arc'teryx",
       "circle": "street",
-      "country": "Канада",
       "city": "Норт-Ванкувер",
+      "country": "Канада",
       "founded": 1989,
       "founder": "Дэйв Лейн",
-      "roots": [],
       "in_store": false,
+      "name": "Arc'teryx",
       "notes": "Марка начиналась под именем Rock Solid, нынешнее имя появилось в 1991 году вместе с Джереми Гардом — не приписывай ему основание компании.",
-      "sources": ["https://en.wikipedia.org/wiki/Arc%27teryx"],
+      "roots": [],
+      "slug": "arcteryx",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Arc%27teryx"
+      ],
       "stories": [
         {
-          "id": "arcteryx-name",
           "angle": "Марка, названная в честь ископаемой птицы",
-          "used": false,
           "facts": [
             "Компания основана в 1989 году в Норт-Ванкувере под названием Rock Solid.",
             "В 1991 году её переименовали в Arc'teryx — в честь археоптерикса, переходного звена от динозавров к птицам.",
             "Имя выбрал Джереми Гард: оно должно было означать ускоренную эволюцию."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Arc%27teryx"]
+          "id": "arcteryx-name",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Arc%27teryx"
+          ],
+          "used": false
         },
         {
-          "id": "arcteryx-harness",
           "angle": "Всё началось со страховочной системы, а не с куртки",
-          "used": false,
           "facts": [
             "Первой продукцией было снаряжение для скалолазания, в том числе страховочная система Vapor.",
             "В ней применили термоламинирование строп вместо привычного шитья.",
             "В 1993 году ту же технологию применили в рюкзаке Bora.",
             "Лицензию на Gore-Tex компания получила в 1996 году."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Arc%27teryx"]
+          "id": "arcteryx-harness",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Arc%27teryx"
+          ],
+          "used": false
         },
         {
-          "id": "arcteryx-owners",
           "angle": "Через сколько рук прошла марка",
-          "used": false,
           "facts": [
             "В 2001 году компанию купила Salomon Group.",
             "В 2005 году она перешла к Amer Sports.",
             "В 2019 году контроль в Amer Sports получила китайская Anta Sports, выкупив 56%."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Arc%27teryx"]
+          "id": "arcteryx-owners",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Arc%27teryx"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "patagonia",
-      "name": "Patagonia",
       "circle": "street",
-      "country": "США",
       "city": "Вентура",
+      "country": "США",
       "founded": 1973,
       "founder": "Ивон Шуинар",
-      "roots": [],
       "in_store": false,
+      "name": "Patagonia",
       "notes": "Про флис Synchilla, отказ от скальных крючьев и кампанию «Don't Buy This Jacket» в проверенном источнике фактов нет — не писать, пока не подтвердится и не попадёт сюда.",
-      "sources": ["https://en.wikipedia.org/wiki/Patagonia,_Inc."],
+      "roots": [],
+      "slug": "patagonia",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+      ],
       "stories": [
         {
-          "id": "patagonia-from-climbing",
           "angle": "Марка, выросшая из кузницы скалолазного снаряжения",
-          "used": false,
           "facts": [
             "С 1957 года Ивон Шуинар продавал кованое вручную снаряжение для скалолазания через свою компанию Chouinard Equipment.",
             "Первый магазин Patagonia, Great Pacific Iron Works, открылся в 1973 году в Вентуре."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Patagonia,_Inc."]
+          "id": "patagonia-from-climbing",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+          ],
+          "used": false
         },
         {
-          "id": "patagonia-recycled",
           "angle": "Куртка из пластиковых бутылок",
-          "used": false,
           "facts": [
             "В 1993 году Patagonia первой в мире начала делать одежду из полиэстера, полученного из переработанных бутылок."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Patagonia,_Inc."]
+          "id": "patagonia-recycled",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+          ],
+          "used": false
         },
         {
-          "id": "patagonia-trust",
           "angle": "Владелец, который отдал компанию",
-          "used": false,
           "facts": [
             "В сентябре 2022 года Ивон Шуинар передал компанию Patagonia Purpose Trust."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Patagonia,_Inc."]
+          "id": "patagonia-trust",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Patagonia,_Inc."
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "new-balance",
-      "name": "New Balance",
       "circle": "street",
-      "country": "США",
       "city": "Бостон",
+      "country": "США",
       "founded": 1906,
       "founder": "Уильям Дж. Райли",
-      "roots": [],
       "in_store": false,
+      "name": "New Balance",
       "notes": "Модели 320 в проверенном источнике нет, зато есть Trackster 1960 года. Систему нумерации моделей источник не объясняет — не выдумывай её.",
-      "sources": ["https://en.wikipedia.org/wiki/New_Balance"],
+      "roots": [],
+      "slug": "new-balance",
+      "sources": [
+        "https://en.wikipedia.org/wiki/New_Balance"
+      ],
       "stories": [
         {
-          "id": "nb-arch-supports",
           "angle": "Компания, начавшаяся с супинаторов и куриных лап",
-          "used": false,
           "facts": [
             "В 1906 году ирландский иммигрант Уильям Дж. Райли основал под Бостоном New Balance Arch Support Company.",
             "Делала она супинаторы и вкладыши, улучшающие посадку обуви.",
             "Считается, что название пришло Райли, когда он наблюдал за курами во дворе: куриную лапу он держал на рабочем столе, объясняя посетителям, как работает супинатор."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/New_Balance"]
+          "id": "nb-arch-supports",
+          "sources": [
+            "https://en.wikipedia.org/wiki/New_Balance"
+          ],
+          "used": false
         },
         {
-          "id": "nb-factories",
           "angle": "Где эти кроссовки шьют на самом деле",
-          "used": false,
           "facts": [
             "Британскую фабрику компания открыла в 1982 году в Уоркингтоне.",
             "В 1991 году производство переехало во Флимби.",
             "В 1972 году компанию купил 28-летний Джим Дэвис."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/New_Balance"]
+          "id": "nb-factories",
+          "sources": [
+            "https://en.wikipedia.org/wiki/New_Balance"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "the-north-face",
-      "name": "The North Face",
       "circle": "street",
-      "country": "США",
       "city": "Сан-Франциско",
+      "country": "США",
       "founded": 1968,
       "founder": "Даглас и Сьюзи Томпкинс",
-      "roots": [],
       "in_store": false,
+      "name": "The North Face",
       "notes": "Год выхода куртки Nuptse в проверенном источнике не назван — про неё писать только без даты.",
-      "sources": ["https://en.wikipedia.org/wiki/The_North_Face"],
+      "roots": [],
+      "slug": "the-north-face",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_North_Face"
+      ],
       "stories": [
         {
-          "id": "tnf-half-dome",
           "angle": "Что нарисовано на логотипе",
-          "used": false,
           "facts": [
             "Марку основали в 1968 году в Сан-Франциско Даглас и Сьюзи Томпкинс.",
             "Начинали со снаряжения для скалолазания и кемпинга.",
             "Логотип повторяет очертания скалы Хаф-Доум в Йосемити высотой свыше 2700 метров."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/The_North_Face"]
+          "id": "tnf-half-dome",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_North_Face"
+          ],
+          "used": false
         },
         {
-          "id": "tnf-vf",
           "angle": "За сколько продали марку, которую теперь носят все",
-          "used": false,
           "facts": [
             "В 2000 году The North Face купила VF Corporation за 25,4 миллиона долларов."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/The_North_Face"]
+          "id": "tnf-vf",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_North_Face"
+          ],
+          "used": false
         }
       ]
     },
     {
-      "slug": "salomon",
-      "name": "Salomon",
       "circle": "street",
-      "country": "Франция",
       "city": "Анси",
+      "country": "Франция",
       "founded": 1947,
       "founder": "Франсуа Саломон",
-      "roots": [],
       "in_store": false,
+      "name": "Salomon",
       "notes": "Года выхода в трейлраннинг источник не даёт, про XT-Wings в нём ничего нет. Про XT-6 сказано только то, что модель подхватила мода в 2023 году.",
-      "sources": ["https://en.wikipedia.org/wiki/Salomon_Group"],
+      "roots": [],
+      "slug": "salomon",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Salomon_Group"
+      ],
       "stories": [
         {
-          "id": "salomon-ski-edges",
           "angle": "Кроссовки, которые выросли из лыжной мастерской",
-          "used": false,
           "facts": [
             "Компанию основал в 1947 году в Анси Франсуа Саломон.",
             "Начиналась она с производства кантов для лыж в маленькой мастерской.",
             "Превращение в глобальную марку для спорта на открытом воздухе связывают с Жоржем Саломоном."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Salomon_Group"]
+          "id": "salomon-ski-edges",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Salomon_Group"
+          ],
+          "used": false
         },
         {
-          "id": "salomon-owners",
           "angle": "Как горная марка оказалась в моде",
-          "used": false,
           "facts": [
             "В 1997 году Salomon купила adidas, компания какое-то время называлась Adidas-Salomon AG.",
             "В 2005 году adidas продала её финской Amer Sports.",
             "Модель XT-6 подхватила мода в 2023 году."
           ],
-          "sources": ["https://en.wikipedia.org/wiki/Salomon_Group"]
+          "id": "salomon-owners",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Salomon_Group"
+          ],
+          "used": false
         }
       ]
     }
