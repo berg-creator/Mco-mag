@@ -39,7 +39,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/C.P._Company"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Красить не ткань, а готовую вещь",
@@ -99,7 +99,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Stone_Island"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Откуда взялось название и почему на рукаве компас",
@@ -125,7 +125,7 @@
             "https://en.wikipedia.org/wiki/Stone_Island",
             "https://en.wikipedia.org/wiki/Massimo_Osti"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Сколько стоит бренд, начавшийся с брезента",
@@ -268,7 +268,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Maison_Margiela"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Показы, которые проходили где угодно, кроме подиума",
@@ -282,7 +282,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Maison_Margiela"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Ботинок с раздвоенным носком",
@@ -293,7 +293,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Maison_Margiela"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Что стало с домом после ухода основателя",
@@ -336,7 +336,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Comme_des_Gar%C3%A7ons"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Магазин, устроенный как выставка",
@@ -660,7 +660,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Carhartt"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Как рабочая куртка попала в хип-хоп",
@@ -730,7 +730,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Arc%27teryx"
           ],
-          "used": false
+          "used": true
         }
       ]
     },
@@ -759,7 +759,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Patagonia,_Inc."
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Куртка из пластиковых бутылок",
@@ -770,7 +770,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Patagonia,_Inc."
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Владелец, который отдал компанию",
@@ -824,7 +824,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/New_Balance"
           ],
-          "used": false
+          "used": true
         }
       ]
     },
@@ -895,7 +895,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Salomon_Group"
           ],
-          "used": false
+          "used": true
         },
         {
           "angle": "Как горная марка оказалась в моде",
@@ -908,7 +908,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Salomon_Group"
           ],
-          "used": false
+          "used": true
         }
       ]
     }
