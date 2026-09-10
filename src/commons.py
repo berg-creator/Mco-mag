@@ -40,6 +40,7 @@ import re
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter, Retry
 
 from . import config, state, telegram
 
@@ -50,6 +51,19 @@ API = "https://commons.wikimedia.org/w/api.php"
 # Только латиница: в HTTP-заголовок кириллица не помещается вовсе.
 UA = "mcomag/0.1 (Telegram @mcomagazine)"
 TIMEOUT = 20
+
+# Commons ограничивает частоту и отвечает 429. Заметно это только на пачке:
+# батч на 15 постов — до 45 запросов подряд, и после четвёртого поста Commons
+# начинает отказывать всем остальным. Выглядит это как «фото не нашлось»,
+# хотя фото есть, — и вся пачка уходит с карточками-заглушками.
+#
+# Отступ считает urllib3 внутри requests: Retry-After от Commons он читает сам,
+# и своего кода с таймерами писать не нужно.
+_SESSION = requests.Session()
+_SESSION.mount(
+    "https://",
+    HTTPAdapter(max_retries=Retry(total=4, backoff_factor=2, status_forcelist=(429, 503))),
+)
 
 # Ширина, до которой просим уменьшить картинку. Оригиналы на Commons бывают
 # по двадцать мегабайт — Telegram такое по ссылке не скачает.
@@ -91,7 +105,7 @@ THING_WORDS = (
     "jacket", "coat", "parka", "hoodie", "knitwear", "shirt", "t-shirt",
     "trouser", "jeans", "denim", "dress", "suit", "uniform", "garment",
     "clothing", "cloth", "fashion", "apparel", "sportswear",
-    "hat", "cap", "bag", "sunglass", "watch",
+    "hat", "cap", "bag", "handbag", "sunglass", "watch",
 )
 
 
@@ -130,9 +144,17 @@ def relevant(pic: dict, words: list[str]) -> bool:
 
 
 def is_thing(pic: dict) -> bool:
-    """Вещь ли на фото — судим по категориям Commons."""
-    cats = " ".join(pic["cats"])
-    return any(thing in cats for thing in THING_WORDS)
+    """Вещь ли на фото — судим по категориям Commons.
+
+    Слово сверяется целиком, а не подстрокой и не по началу: короткое «cap»
+    сидит и в «landscape», и в «capitol», из-за чего посту про владельцев
+    Salomon достался речной пейзаж Саломона ван Рёйсдала, а посту про деки
+    Supreme — здание Верховного суда США. Допускается только множественное
+    число: в категориях Commons пишут «jackets» и «shoes», а не «jacket».
+    """
+    words = _WORD.findall(" ".join(pic["cats"]))
+    forms = {form for thing in THING_WORDS for form in (thing, thing + "s", thing + "es")}
+    return any(word in forms for word in words)
 
 
 def is_store(pic: dict) -> bool:
@@ -206,7 +228,7 @@ def search(query: str, limit: int = 8) -> list[dict]:
         "clshow": "!hidden",
     }
     try:
-        response = requests.get(API, params=params, headers={"User-Agent": UA}, timeout=TIMEOUT)
+        response = _SESSION.get(API, params=params, headers={"User-Agent": UA}, timeout=TIMEOUT)
         response.raise_for_status()
         pages = (response.json().get("query") or {}).get("pages") or {}
     except (requests.RequestException, ValueError) as exc:
@@ -341,6 +363,23 @@ def main() -> int:
     assert of_brand(tela, "Stone Island")
     island = {"what": "Stone Island", "file": "Stone Island", "cats": ["stone island"]}
     assert not of_brand(island, "Stone Island")
+    # Пейзаж голландца по имени Саломон — не кроссовки Salomon: «landscape»
+    # не кепка, даже если «cap» в нём и правда есть.
+    ruysdael = {
+        "what": "Salomon van Ruysdael - A river landscape",
+        "file": "salomon-van-ruysdael",
+        "cats": ["17th-century landscape paintings of the netherlands"],
+    }
+    assert not is_thing(ruysdael) and not of_brand(ruysdael, "Salomon")
+    # Здание Верховного суда — не кепка: «capitol» тоже начинается на «cap».
+    court = {
+        "what": "Supreme Court of the United States",
+        "file": "supreme-court",
+        "cats": ["united states supreme court building from the united states capitol"],
+    }
+    assert not is_thing(court)
+    # Множественное число в категориях — обычное дело, его терять нельзя.
+    assert is_thing({"cats": ["handbags", "dresses"]}) and is_thing({"cats": ["nike shoes"]})
     # Витрина магазина — не вещь, даже когда категория называется «Clothing stores».
     soho = {"what": "Stone Island - SoHo", "file": "soho", "cats": ["clothing stores"]}
     assert rank(soho, {"brand": "Stone Island", "story_id": "stone-island-ghost"}) == 0
